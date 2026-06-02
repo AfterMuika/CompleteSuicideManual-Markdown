@@ -1,0 +1,33 @@
+{
+  "name": "CompleteSuicideManual",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "prettier": "prettier --check CompleteSuicideManual-Zh_CN.md --write",
+    "markdownlint": "markdownlint-cli2 --config package.json --configPointer /markdownlint-cli2",
+    "pandoc": "pandoc CompleteSuicideManual-Zh_CN.md --reference-doc template/template.docx -o CompleteSuicideManual-Zh_CN.md"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.0",
+  "markdownlint-cli2": {
+    "config": {
+      "line-length": false,
+      "no-inline-html": false,
+      "no-alt-text": false,
+      "no-emphasis-as-heading": false
+    },
+    "globs": [
+      "CompleteSuicideManual-Zh_CN.md",
+      "!node_modules",
+      "!ref"
+    ],
+    "noProgress": true,
+    "fix": true
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "^0.22.1",
+    "prettier": "3.8.3"
+  }
+}
